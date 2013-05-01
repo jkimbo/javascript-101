@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>JavaScript Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/codemirror.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="muted">JavaScript Demo</h1>
+
+            <div class="code">
+                <textarea class="content">console.log('hello');</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <div class="code">
+                <textarea class="content">function addNum(num1, num2) {
+    var final = num1 + num2; 
+    return final;
+}
+console.log(addNum(1,2));</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/codemirror.js"></script>
+        <script src="js/javascript.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
