@@ -6,10 +6,11 @@ A short introduction to JavaScript
 
 # Syntax
 
+# Types
+
 # Functions
 
 # Pitfalls
-## Types
 
 # "this"
 
