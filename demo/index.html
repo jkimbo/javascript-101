@@ -103,6 +103,21 @@ foo.addNum = function(num1, num2) {
 console.log(foo.addNum(1,2));</textarea>
                 <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
             </div>
+            <div class="code">
+                <textarea class="content">var foo = {};
+foo.callback = function(cb) {
+    if(typeof cb == "function") {
+        cb(3);
+    } else {
+        alert("cb is not a function!");
+    }
+};
+
+foo.callback(function(num) {
+    console.log(num);
+});</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
 
             <h2 class="muted">Comparisons</h2>
             <div class="code">
