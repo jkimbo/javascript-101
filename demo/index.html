@@ -17,11 +17,73 @@
         <div class="container">
             <h1 class="muted">JavaScript Demo</h1>
 
+            <h2 class="muted">Syntax</h2>
             <div class="code">
-                <textarea class="content">console.log('hello');</textarea>
+                <textarea class="content">console.log("hello");</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+            <div class="code">
+                <textarea class="content">console.log(1);</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+            <div class="code">
+                <textarea class="content">var foo = "hello";
+console.log(foo);
+                </textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+            <div class="code">
+                <textarea class="content">var bar = {};
+bar.foo = "hello";
+bar.fiz = 2;
+
+console.log(bar);
+console.log(bar.foo);
+                </textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+            <div class="code">
+                <textarea class="content">var bar = [];
+bar.push("hello");
+bar.push(2);
+
+console.log(bar);
+console.log(bar[0]);
+                </textarea>
                 <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
             </div>
 
+            <div class="code">
+                <textarea class="content">function foo() {
+    console.log('Foo');
+}
+foo();
+                </textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <h2 class="muted">Concatenation</h2>
+            <div class="code">
+                <textarea class="content">console.log("hello " + "world");
+console.log(1 + 1);
+console.log("1" + 1);
+console.log("hello" * 1);
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <h2 class="muted">Types</h2>
+            <div class="code">
+                <textarea class="content">console.log(typeof "hello");
+console.log(typeof 1);
+console.log(typeof {});
+console.log(typeof []);
+console.log(typeof function() { return true; });
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <h2 class="muted">Functions</h2>
             <div class="code">
                 <textarea class="content">function addNum(num1, num2) {
     var final = num1 + num2; 
@@ -30,7 +92,118 @@
 console.log(addNum(1,2));</textarea>
                 <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
             </div>
+            <div class="code">
+                <textarea class="content">var addNum = function(num1, num2) {
+    var final = num1 + num2; 
+    return final;
+}
+console.log(addNum(1,2));</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+            <div class="code">
+                <textarea class="content">var foo = {};
+foo.addNum = function(num1, num2) {
+    var final = num1 + num2; 
+    return final;
+}
+console.log(foo.addNum(1,2));</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <h2 class="muted">Comparisons</h2>
+            <div class="code">
+                <textarea class="content">
+console.log(false == 0);
+console.log("" == 0);
+console.log("5" == 5);
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+            <div class="code">
+                <textarea class="content">
+console.log(false === 0);
+console.log("" === 0);
+console.log("5" === 5);
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <h2 class="muted">Pitfalls</h2>
+
+            <h2 class="muted">"this"</h2>
+            <div class="code">
+                <textarea class="content">var foo = {
+    bar: 2,
+    fiz: 3
+};
+
+foo.add = function() {
+    return this.bar + this.fiz;
+}
+
+console.log(foo.add());
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <div class="code">
+                <textarea class="content">var add = function (x, y) {
+    this.val = x + y;
+};
+
+var obj = {
+    val: 0
+};
+add.call(obj, 2, 8);
+console.log(obj.val);
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <h2 class="muted">Scope</h2>
+
+            <h2 class="muted">Objects and Prototypes</h2>
+            <div class="code">
+                <textarea class="content">var Foo = function(bar, fiz) {
+    this.bar = bar;
+    this.fiz = fiz;
+};
+
+Foo.prototype.add = function() {
+    return this.bar + this.fiz;
+}
+
+var foo = new Foo(1, 2);
+
+console.log(foo.add());
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+            <div class="code">
+                <textarea class="content">var Foo = function(bar, fiz) {
+    this.bar = bar;
+    this.fiz = fiz;
+};
+
+Foo.prototype.add = function() {
+    return this.bar + this.fiz;
+}
+
+var Bar = function() {
+    this.bar = 40;
+    this.fiz = 2;
+}
+
+Bar.prototype = new Foo();
+
+var bar = new Bar();
+
+console.log(bar.add());
+</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
         </div>
+    </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="js/codemirror.js"></script>

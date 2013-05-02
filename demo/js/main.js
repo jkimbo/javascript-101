@@ -16,6 +16,7 @@ $(function() {
             var editor = $(this).parents('.code').find('.CodeMirror').get(0).CodeMirror;
             var code = editor.getValue();
             eval(code);
+            return false;
         });
     });
 
