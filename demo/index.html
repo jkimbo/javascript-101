@@ -153,6 +153,24 @@ console.log(foo.add());</textarea>
             </div>
 
             <div class="code">
+                <textarea class="content">var foo = {
+    num: 3
+};
+foo.callback = function(cb) {
+    if(typeof cb == "function") {
+        cb(this.num);
+    } else {
+        alert("cb is not a function!");
+    }
+};
+
+foo.callback(function(num) {
+    console.log(num);
+});</textarea>
+                <a href="#" title="Run code" class="run"><i class="icon-play"></i></a>
+            </div>
+
+            <div class="code">
                 <textarea class="content">var add = function (x, y) {
     this.val = x + y;
 };
